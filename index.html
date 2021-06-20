@@ -11,8 +11,9 @@
 
 
 <center><h1>Naslov</h1></center>
-<center><button>ok</button></center>
-
+<center><button id = "ok">ok</button></center>
+<center><button id="ok2">ok2</button></center>
+      
 </body>
 
 
@@ -21,12 +22,19 @@
 
 $(document).ready(function(){
 
-  $('button').click(function(){
+  $("#ok").click(function(){
 $('h1').css('color','green');
 
 
 });
-});
+
+
+ $('#ok2').click(function(){ 
+			$.get("a/lokacija.php", function(data){
+    				$('h2').after('<center>'+data+'</center>');
+  			});
+	});
+ });
 
 
 </script>
